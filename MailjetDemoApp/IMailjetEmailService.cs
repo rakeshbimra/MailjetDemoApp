@@ -1,5 +1,4 @@
-﻿using Mailjet.Client;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace MailjetDemoApp
 {
-    public interface IMailjetClientFactory
+    public interface IMailjetEmailService
     {
-        IMailjetClient CreateClient();
+        Task SendEmailAsync(EmailMessage emailMessage);
     }
 }
