@@ -17,7 +17,7 @@ namespace MailjetDemoApp
             string mailjetSecretKeyValue = Environment.GetEnvironmentVariable(MailjetSecretKey);
 
             Ensure.ConditionIsMet(mailjetSecretKeyValue.IsNotNullOrEmpty(),
-                () => throw new ArgumentNullException($"{nameof(mailjetSecretKeyValue)} not configured");
+                () => throw new ArgumentNullException($"{nameof(mailjetSecretKeyValue)} not configured"));
 
             return new MailjetClient(mailjetPublicKeyValue, mailjetSecretKeyValue) { };
         }
